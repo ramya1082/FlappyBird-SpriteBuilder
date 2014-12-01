@@ -23,23 +23,5 @@
     [character flap];
 }
 
-- (void)addObstacle {
-    Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Obstacle"];
-    CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
-    CGPoint worldPosition = [physicsNode convertToNodeSpace:screenPosition];
-    obstacle.position = worldPosition;
-    [obstacle setupRandomPosition];
-    obstacle.zOrder = DrawingOrderPipes;
-    [physicsNode addChild:obstacle];
-    [_obstacles addObject:obstacle];
-}
-
-#pragma mark - Update
-
-- (void)showScore
-{
-    _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
-    _scoreLabel.visible = true;
-}
 
 @end
